@@ -22,4 +22,9 @@ public class Property {
 
     public Property() {
     }
+
+    public Property(String name, List<Room> rooms) {
+        this.name = name;
+        this.rooms = rooms;
+    }
 }

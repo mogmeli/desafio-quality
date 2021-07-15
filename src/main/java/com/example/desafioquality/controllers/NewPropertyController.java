@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -23,13 +24,12 @@ public class NewPropertyController {
     NewPropertyService newPropertyService;
 
     @PostMapping
-    public ResponseEntity<PropertyDto> newProperty(@RequestBody PropertyForm propertyForm, UriComponentsBuilder uriBuilder){
-        Property property = newPropertyService.convert(propertyForm);
-        newPropertyService.save(property);
+    public ResponseEntity newProperty(@RequestBody @Valid PropertyForm propertyForm, UriComponentsBuilder uriBuilder){
+
+        Property property = newPropertyService.save(propertyForm);
         URI uri = uriBuilder.path("/property/{id}").buildAndExpand(property.getId()).toUri();
 
         return ResponseEntity.ok().body(new PropertyDto(property));
-
     }
 
 }

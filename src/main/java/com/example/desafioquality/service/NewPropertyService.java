@@ -2,6 +2,8 @@ package com.example.desafioquality.service;
 
 import com.example.desafioquality.controllers.form.PropertyForm;
 import com.example.desafioquality.models.Property;
+import com.example.desafioquality.repositories.DistrictRepository;
+import com.example.desafioquality.repositories.PropertyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,13 +11,15 @@ import org.springframework.stereotype.Service;
 public class NewPropertyService {
 
     @Autowired
-    NewPropertyService newPropertyService;
+    PropertyRepository propertyRepository;
 
-    public Property convert(PropertyForm propertyForm) {
-        return propertyForm.convert(propertyForm);
-    }
+    @Autowired
+    DistrictService districtService;
 
-    public void save(Property property){
+    public Property save(PropertyForm propertyForm){
+        Property property = propertyForm.convert(districtService);
         //TODO: Check if district Id exists, if so, saves the property.
+        propertyRepository.save(property);
+        return property;
     }
 }

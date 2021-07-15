@@ -23,8 +23,9 @@ public class Property {
     public Property() {
     }
 
-    public Property(String name, List<Room> rooms) {
+    public Property(String name, List<Room> rooms, District district) {
         this.name = name;
         this.rooms = rooms;
+        this.district = district;
     }
 }

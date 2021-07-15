@@ -1,4 +1,4 @@
-package com.example.desafioquality.controller;
+package com.example.desafioquality.controllers;
 
 import com.example.desafioquality.dto.PropertyAreaDto;
 import com.example.desafioquality.models.Property;

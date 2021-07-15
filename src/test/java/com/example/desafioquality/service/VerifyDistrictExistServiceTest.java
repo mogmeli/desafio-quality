@@ -46,15 +46,3 @@ public class VerifyDistrictExistServiceTest {
 
 
 }
-
-
-
-
-public class TestService(){
-
-    Repository repository;
-
-    public TestService(Repository repository) {
-        this.repository = repository;
-    }
-}

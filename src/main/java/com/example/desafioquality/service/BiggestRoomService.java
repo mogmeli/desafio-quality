@@ -6,6 +6,7 @@ import com.example.desafioquality.models.Room;
 import com.example.desafioquality.repositories.PropertyRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
@@ -22,25 +23,12 @@ public class BiggestRoomService {
 
     public Room findBiggestRoom (Property property){
 
-        //Optional<Room> biggestRoom = property.getRooms().stream().map(e -> e.getWidth() * e.getLength()).max();
+        Optional<Room> biggestRoom = property.getRooms().stream().max(Comparator.comparing(e -> e.getWidth()*e.getLength()));
 
-        List<Room> rooms = property.getRooms();
-        if(rooms.isEmpty()){
+        if(biggestRoom.isEmpty()){
             throw new NoRoomFoundException("Erro ao calcular o maior quarto, nenhum quarto foi encontrado!");
         }
 
-        double biggestRoomArea = 0;
-        Room biggestRoom = new Room();
-
-        for (Room room:
-             rooms) {
-            double area = room.getWidth() * room.getLength();
-            if(area>biggestRoomArea){
-                biggestRoomArea=area;
-                biggestRoom=room;
-            }
-        }
-
-        return biggestRoom;
+        return biggestRoom.get();
     }
 }

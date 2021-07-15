@@ -1,6 +1,8 @@
 package com.example.desafioquality.controllers.form;
 
 import com.example.desafioquality.models.Room;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
@@ -9,6 +11,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Setter
+@Builder
+@Getter
 public class RoomForm {
 
     @Size(max = 30)
@@ -25,15 +29,9 @@ public class RoomForm {
     @Min( value = 1)
     private final double length;
 
-    public RoomForm(Room room) {
-        this.name = room.getName();
-        this.width = room.getWidth();
-        this.length = room.getLength();
-    }
-
     public static List<Room> convert(List<RoomForm> list){
             return list.stream().map(e ->
-                new Room(e.name, e.width, e.length)
+                new Room(e.getName(), e.getWidth(), e.getLength())
             ).collect(Collectors.toList());
     }
 }

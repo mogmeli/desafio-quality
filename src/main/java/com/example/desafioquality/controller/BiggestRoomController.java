@@ -1,5 +1,6 @@
 package com.example.desafioquality.controller;
 
+import com.example.desafioquality.dto.PropertyAreaDto;
 import com.example.desafioquality.models.Property;
 import com.example.desafioquality.models.Room;
 import com.example.desafioquality.service.BiggestRoomService;
@@ -21,10 +22,9 @@ public class BiggestRoomController {
     PropertyService propertyService;
 
     @GetMapping("/{id}/biggestroom")
-    public ResponseEntity<Room> getBiggestRoom(@PathVariable Long id){
+    public ResponseEntity<PropertyAreaDto> getBiggestRoom(@PathVariable Long id){
         Property property = propertyService.getById(id);
-
-        return ResponseEntity.ok(biggestRoomService.findBiggestRoom(property));
+        return ResponseEntity.ok(biggestRoomService.getBiggestRoom(id));
     }
 
 }

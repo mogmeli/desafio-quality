@@ -25,12 +25,12 @@ public class PropertyForm {
     @NotNull
     @NotEmpty
     String dist_name; //TODO: insert this value on constructor
-    List<Room> roomsList;
+    List<RoomForm> roomsList;
 
     public PropertyForm() {
     }
 
     public Property convert(DistrictService districtService){
-        return new Property(prop_name, roomsList, districtService.getDistrict(dist_name));
+        return new Property(prop_name, RoomForm.convert(roomsList), districtService.getDistrict(dist_name));
     }
 }

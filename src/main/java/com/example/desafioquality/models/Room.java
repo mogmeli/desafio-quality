@@ -23,5 +23,9 @@ public class Room {
     public Room() {
     }
 
-
+    public Room(String name, double width, double length) {
+        this.name = name;
+        this.width = width;
+        this.length = length;
+    }
 }

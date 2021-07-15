@@ -1,30 +1,33 @@
 package com.example.desafioquality.service;
 
+import com.example.desafioquality.controller.dto.PropertyTotalAreaDto;
+import com.example.desafioquality.controller.dto.PropertyValueDto;
 import com.example.desafioquality.models.Property;
-import com.example.desafioquality.repositories.PropertyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 
 @Service
 public class FindValuePropertyService {
 
+    @Autowired
     private PropertyService propertyService;
+    @Autowired
+    private RoomAreaService roomAreaService;
 
-    public FindValuePropertyService(PropertyService propertyService) {
+    public FindValuePropertyService(PropertyService propertyService, RoomAreaService roomAreaService) {
         this.propertyService = propertyService;
+        this.roomAreaService = roomAreaService;
+
     }
 
-    public BigDecimal valueProperty(Long propertyId) {
-        Property property = propertyService.getById(propertyId);
-
-        double rooms = property
+    private double totalArea(Property property) {
+        return property
                 .getRooms()
                 .stream()
-                .mapToDouble(e -> e.getLength() * e.getWidth())
+                .mapToDouble(e -> roomAreaService.calculaArea(e))
                 .sum();
 
-        return BigDecimal.valueOf(rooms).multiply(property.getDistrict().getValue_m2());
     }
 }

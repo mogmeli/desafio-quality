@@ -18,10 +18,10 @@ public class PropertyService {
     }
 
     public Property getById(Long id) {
-        Optional<Property> optionalProperty = propertyRepository.findById(id);
-        if(optionalProperty.isEmpty())
-            throw new PropertyNotFoundException("Property not found.");
-        return optionalProperty.get();
+        return propertyRepository
+                .findById(id)
+                .orElseThrow(() -> new PropertyNotFoundException("Property not found."));
+
 
     }
 }

@@ -1,5 +1,6 @@
 package com.example.desafioquality.controller;
 
+import com.example.desafioquality.dto.PropertyAreaDto;
 import com.example.desafioquality.dto.RoomAreaDto;
 import com.example.desafioquality.service.RoomAreaService;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,7 @@ public class RoomAreaController {
     }
 
     @GetMapping("/roomArea/{id}")
-    public ResponseEntity<List<RoomAreaDto>> getRoomArea(@PathVariable Long id){
-
-        return ResponseEntity.ok(roomAreaService.getProperty(id));
+    public ResponseEntity<PropertyAreaDto> getRoomArea(@PathVariable Long id){
+        return ResponseEntity.ok(roomAreaService.getRoomAreas(id));
     }
 }

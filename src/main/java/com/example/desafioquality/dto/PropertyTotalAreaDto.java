@@ -1,4 +1,4 @@
-package com.example.desafioquality.controller.dto;
+package com.example.desafioquality.dto;
 
 
 import lombok.Getter;

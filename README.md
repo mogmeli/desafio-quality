@@ -1,6 +1,6 @@
 # Desafio-Quality - Grupo 3
 
-[Trello Board](https://trello.com/b/KN4wxOQa/desafio-spring)
+[Trello Board](https://trello.com/b/GOEUvA4e/desafio-quality-unit-testing)
 
 [Postman Docs](https://documenter.getpostman.com/view/16324866/Tzm5Jx4Z)
 

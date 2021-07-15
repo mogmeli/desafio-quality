@@ -18,7 +18,6 @@ import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
-@RequestMapping("/new")
 public class NewPropertyController {
     @Autowired
     NewPropertyService newPropertyService;

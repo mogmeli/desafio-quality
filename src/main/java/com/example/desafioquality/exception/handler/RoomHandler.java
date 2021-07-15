@@ -1,7 +1,7 @@
-package com.example.desafioquality.config.exceptions.handler;
+package com.example.desafioquality.exception.handler;
 
-import com.example.desafioquality.config.exceptions.NoRoomFoundException;
-import com.example.desafioquality.dtos2.RoomExceptionDto;
+import com.example.desafioquality.exception.NoRoomFoundException;
+import com.example.desafioquality.dto.RoomExceptionDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

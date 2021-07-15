@@ -1,4 +1,4 @@
-package com.example.desafioquality.config.exceptions;
+package com.example.desafioquality.exception;
 
 public class NoRoomFoundException extends RuntimeException {
     public NoRoomFoundException(String s) {

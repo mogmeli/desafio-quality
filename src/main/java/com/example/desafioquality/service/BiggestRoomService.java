@@ -1,10 +1,8 @@
-package com.example.desafioquality.services;
+package com.example.desafioquality.service;
 
-import com.example.desafioquality.config.exceptions.NoRoomFoundException;
+import com.example.desafioquality.exception.NoRoomFoundException;
 import com.example.desafioquality.models.Property;
-import com.example.desafioquality.models.Room;
 import com.example.desafioquality.repositories.PropertyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.OptionalDouble;

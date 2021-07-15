@@ -7,6 +7,7 @@ import com.example.desafioquality.service.DistrictService;
 import lombok.Setter;
 
 import javax.swing.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -18,9 +19,11 @@ public class PropertyForm {
 
     @Size(max = 30)
     @NotNull
-    @Pattern(regexp = "^[A-Z][a-z0-9_-]{3,19}$")
+    @Pattern(regexp = "^[A-Z].*", message = "Must start with capital letter")
+    @NotEmpty
     String prop_name;
     @NotNull
+    @NotEmpty
     String dist_name; //TODO: insert this value on constructor
     List<Room> roomsList;
 

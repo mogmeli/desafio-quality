@@ -1,8 +1,8 @@
-package com.example.desafioquality.controller;
+package com.example.desafioquality.controllers;
 
 
-import com.example.desafioquality.controller.dto.PropertyTotalAreaDto;
-import com.example.desafioquality.controller.dto.PropertyValueDto;
+import com.example.desafioquality.dto.PropertyTotalAreaDto;
+import com.example.desafioquality.dto.PropertyValueDto;
 import com.example.desafioquality.service.FindValuePropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

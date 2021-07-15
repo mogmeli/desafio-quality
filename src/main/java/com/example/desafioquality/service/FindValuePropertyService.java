@@ -1,7 +1,7 @@
 package com.example.desafioquality.service;
 
-import com.example.desafioquality.controller.dto.PropertyTotalAreaDto;
-import com.example.desafioquality.controller.dto.PropertyValueDto;
+import com.example.desafioquality.dto.PropertyTotalAreaDto;
+import com.example.desafioquality.dto.PropertyValueDto;
 import com.example.desafioquality.models.Property;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

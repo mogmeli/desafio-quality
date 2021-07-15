@@ -43,5 +43,4 @@ public class RoomAreaService {
     public BigDecimal calculaValor(Room room, BigDecimal valor){
         return valor.multiply(BigDecimal.valueOf(calculaArea(room)));
     }
-
 }

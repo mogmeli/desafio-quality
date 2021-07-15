@@ -2,8 +2,6 @@
 
 [Trello Board](https://trello.com/b/GOEUvA4e/desafio-quality-unit-testing)
 
-[Postman Docs](https://documenter.getpostman.com/view/16324866/Tzm5Jx4Z)
-
 
 ## Modelo de Entidade Relacionamento
 ![image](https://github.com/joutavm/desafio-spring/blob/master/Captura%20de%20Tela%202021-07-08%20a%CC%80s%2012.16.22.png)

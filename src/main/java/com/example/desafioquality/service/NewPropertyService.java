@@ -18,7 +18,6 @@ public class NewPropertyService {
 
     public Property save(PropertyForm propertyForm){
         Property property = propertyForm.convert(districtService);
-        //TODO: Check if district Id exists, if so, saves the property.
         propertyRepository.save(property);
         return property;
     }

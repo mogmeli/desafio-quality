@@ -24,7 +24,6 @@ public class FindValuePropertyService {
     }
 
     public BigDecimal valueProperty(Property property) {
-
         return BigDecimal.valueOf(totalArea(property)).multiply(property.getDistrict().getValue_m2());
     }
 

@@ -9,6 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +45,21 @@ class RoomAreaServiceTest {
 
         //then
         assertEquals(result, expected);
+
+    }
+
+    @Test
+    public void shouldReturnRightRoomValue_WhenSendingARoomAndValue(){
+        //given
+        Room room = new Room("quarto", 10, 12);
+        BigDecimal valor = new BigDecimal("15");
+        BigDecimal expected = new BigDecimal("1800.0");
+
+        //when
+        BigDecimal result = roomAreaService.calculaValor(room,valor);
+
+        //then
+        assertEquals(result,expected);
 
     }
 }

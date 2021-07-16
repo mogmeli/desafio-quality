@@ -34,6 +34,12 @@ public class PropertyForm {
     public PropertyForm() {
     }
 
+    public PropertyForm(String prop_name, String dist_name, List<RoomForm> roomsList) {
+        this.prop_name = prop_name;
+        this.dist_name = dist_name;
+        this.roomsList = roomsList;
+    }
+
     public Property convert(DistrictService districtService){
         return new Property(prop_name, RoomForm.convert(roomsList), districtService.getDistrict(dist_name));
     }

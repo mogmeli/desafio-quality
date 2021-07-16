@@ -2,6 +2,7 @@ package com.example.desafioquality.controller;
 
 import com.example.desafioquality.controllers.GetAllController;
 import com.example.desafioquality.service.GetAllService;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

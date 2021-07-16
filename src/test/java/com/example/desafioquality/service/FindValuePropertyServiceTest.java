@@ -4,6 +4,7 @@ import com.example.desafioquality.models.District;
 import com.example.desafioquality.models.Property;
 import com.example.desafioquality.models.Room;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

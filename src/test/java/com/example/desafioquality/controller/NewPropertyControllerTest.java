@@ -6,10 +6,15 @@ import com.example.desafioquality.controllers.form.RoomForm;
 import com.example.desafioquality.models.District;
 import com.example.desafioquality.models.Property;
 import com.example.desafioquality.models.Room;
+import com.example.desafioquality.repositories.PropertyRepository;
+import com.example.desafioquality.repositories.RoomRepository;
 import com.example.desafioquality.service.NewPropertyService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -34,7 +39,21 @@ public class NewPropertyControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
+    private PropertyRepository propertyRepository;
+
+    @Autowired
+    private RoomRepository roomRepository;
+
+
+    @Autowired
     ObjectMapper objectMapper;
+
+    @AfterEach
+    void tearDown() {
+        propertyRepository.deleteAll();
+        roomRepository.deleteAll();
+
+    }
 
     @Test
     void givenNewProperty_shouldReturn200() throws Exception {

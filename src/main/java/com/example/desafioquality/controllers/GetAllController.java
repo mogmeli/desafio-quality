@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping()
+@RequestMapping("/property")
 public class GetAllController {
-
     @Autowired
     GetAllService getAllService;
+
 
     @GetMapping()
     public ResponseEntity<List<Property>> getAllProperty(){

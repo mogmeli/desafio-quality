@@ -1,0 +1,5 @@
+insert into DISTRICT (NAME, VALUE_M2) values('Perdizes', 30)
+insert into DISTRICT (NAME, VALUE_M2) values('Mooca', 90)
+insert into DISTRICT (NAME, VALUE_M2) values('Osasco', 10)
+insert into DISTRICT (NAME, VALUE_M2) values('Vila Mariana', 120)
+insert into DISTRICT (NAME, VALUE_M2) values('Higienopolis', 300)

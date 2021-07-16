@@ -29,6 +29,12 @@ public class RoomForm {
     @Min( value = 1)
     private final double length;
 
+    public RoomForm(String name, double width, double length) {
+        this.name = name;
+        this.width = width;
+        this.length = length;
+    }
+
     public static List<Room> convert(List<RoomForm> list){
             return list.stream().map(e ->
                 new Room(e.getName(), e.getWidth(), e.getLength())

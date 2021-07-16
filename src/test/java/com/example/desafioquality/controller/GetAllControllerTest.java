@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -19,6 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureMockMvc
+@ActiveProfiles("test")
 public class GetAllControllerTest {
 
     @Autowired
@@ -26,6 +28,6 @@ public class GetAllControllerTest {
 
     @Test
     void whenItsCalled_return200() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/")).andExpect(status().isOk());
+        mockMvc.perform(MockMvcRequestBuilders.get("/property")).andExpect(status().isOk());
     }
 }

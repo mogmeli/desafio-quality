@@ -4,7 +4,7 @@
 
 
 ## Modelo de Entidade Relacionamento
-![image](https://github.com/joutavm/desafio-spring/blob/master/Captura%20de%20Tela%202021-07-08%20a%CC%80s%2012.16.22.png)
+![image](https://github.com/mogmeli/desafio-quality/blob/master/Untitled%20Diagram%20(1).png)
 
 ## Founders
 

@@ -13,9 +13,9 @@ import java.util.List;
 @RestController
 @RequestMapping()
 public class GetAllController {
-
     @Autowired
     GetAllService getAllService;
+
 
     @GetMapping()
     public ResponseEntity<List<Property>> getAllProperty(){
